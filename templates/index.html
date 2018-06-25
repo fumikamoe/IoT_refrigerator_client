@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="3">
+  </head>
+  <body>
+  <p align="center">
+  {% if flag_motion_detected == True %}
+        <h1>냉장고 문이 열려 있습니다!</h1>
+  {% else %}
+        <h1>냉장고 문이 닫혀 있습니다!</h1>
+  {% endif %}
+  <br>
+  {% if flag_image_processed == False %}
+      <img src="{{url_for('static', filename="original.png")}}"/>
+      <img src="{{url_for('static', filename="boxed.png")}}"/>
+  {% else %}
+  <br>
+  <h1>이미지 인식 중입니다. 잠시만 기다려주세요!</h1>
+  {% endif %}
+  <br>
+  {% if flag_cloud_uploaded == True %}
+  <h1>이미지 처리 후 클라우드로 업로드 중입니다!</h1>
+  {% endif %}
+  </p>
+  </body>
+</html>
