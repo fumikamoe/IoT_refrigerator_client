@@ -77,7 +77,6 @@ def index():
     return render_template('index.html', flag_motion_detected = flag_motion_detected, flag_image_processed=flag_image_processed, flag_cloud_uploaded=flag_cloud_uploaded)
 
 if __name__ == '__main__':
-    print("하이부를 실행합니다!")
     Thread_Motion_Detect()
     Thread_Image_Processing()
     app.run(host='0.0.0.0', threaded=True)
